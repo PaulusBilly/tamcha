@@ -11,78 +11,89 @@ export default function MenuPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#E8E3DC] px-9 py-8">
-      {/* Header */}
-      <header className="flex items-center justify-between mb-16">
-        <h1 className="font-times text-[64px] leading-none tracking-tight">
+    <div className="min-h-screen bg-[#E3E2C7]">
+      {/* Header with Logo and Navigation */}
+      <header className="px-9 py-8 flex items-center justify-between mb-12">
+        {/* Logo */}
+        <h1
+          className="font-times text-[64px] leading-none text-[#267A18]"
+          style={{ letterSpacing: "-0.04em" }}
+        >
           Tamcha
         </h1>
 
-        <nav className="flex items-center gap-12">
-          <a
-            href="#"
-            className="font-times text-[20px] tracking-wide hover:opacity-70 transition-opacity"
-          >
-            MENU
-          </a>
-          <a
-            href="#"
-            className="font-times text-[20px] tracking-wide hover:opacity-70 transition-opacity"
-          >
-            LOCATION
-          </a>
-          <a
-            href="#"
-            className="font-times text-[20px] tracking-wide hover:opacity-70 transition-opacity"
-          >
-            ABOUT US
-          </a>
-          <a
-            href="#"
-            className="font-times text-[20px] tracking-wide hover:opacity-70 transition-opacity"
-          >
-            MEMBERSHIP
-          </a>
-          <button className="w-12 h-12 flex items-center justify-center hover:opacity-70 transition-opacity">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-              <circle cx="24" cy="24" r="23" stroke="black" strokeWidth="2" />
-              <path d="M24 12 L32 20 L24 28 L16 20 Z" fill="black" />
-              <path d="M24 20 L32 28 L24 36 L16 28 Z" fill="black" />
-            </svg>
+        {/* Navigation Bar with Icon */}
+        <div className="flex items-center gap-8">
+          <nav className="bg-[#D8D7C4] px-10 py-4 flex items-center gap-16">
+            <a
+              href="#"
+              className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity"
+            >
+              MENU
+            </a>
+            <a
+              href="#"
+              className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity"
+            >
+              LOCATION
+            </a>
+            <a
+              href="#"
+              className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity"
+            >
+              ABOUT US
+            </a>
+            <a
+              href="#"
+              className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity"
+            >
+              MEMBERSHIP
+            </a>
+          </nav>
+          <button className="w-16 h-16 flex items-center justify-center hover:opacity-70 transition-opacity">
+            <img
+              src="/Tamcha-Icon.svg"
+              alt="Tamcha Icon"
+              className="w-full h-full"
+            />
           </button>
-        </nav>
+        </div>
       </header>
 
-      {/* Filter Buttons */}
-      <div className="flex gap-4 mb-8">
-        <button className="px-6 py-2 bg-[#B8AFA3] font-times text-[16px] tracking-widest hover:bg-[#A89E92] transition-colors">
-          FILTER
-        </button>
-        <button className="px-6 py-2 border border-black font-times text-[16px] tracking-widest hover:bg-black hover:text-white transition-colors">
-          ALL
-        </button>
-        <button className="px-6 py-2 border border-black font-times text-[16px] tracking-widest hover:bg-black hover:text-white transition-colors">
-          MILK
-        </button>
-        <button className="px-6 py-2 border border-black font-times text-[16px] tracking-widest hover:bg-black hover:text-white transition-colors">
-          COFFEE
-        </button>
-      </div>
+      {/* Main Content */}
+      <div className="px-9 pb-16">
+        {/* Filter Buttons */}
 
-      {/* Product Grid */}
-      <div className="grid grid-cols-4 gap-5">
-        {products.map((product) => (
-          <div key={product.id} className="flex flex-col gap-2">
-            {/* Product Image Placeholder */}
-            <div className="aspect-square bg-[#C4C4C4] rounded-sm"></div>
-            {/* Product Name */}
-            <div className="bg-[#C4C4C4] py-3 text-center">
-              <p className="font-times text-[20px] tracking-wide">
-                {product.name}
-              </p>
+        <div className="flex gap-3 mb-8">
+          <button className="px-8 py-2.5 bg-[#9BBE8D] font-times text-[16px] tracking-widest text-white hover:bg-[#267A18] transition-colors">
+            FILTER
+          </button>
+          <button className="px-8 py-2.5 border-2 border-[#267A18] bg-[#F5F4E8] font-times text-[16px] tracking-widest text-[#267A18] hover:bg-[#267A18] hover:text-white transition-colors">
+            ALL
+          </button>
+          <button className="px-8 py-2.5 border-2 border-[#267A18] bg-[#F5F4E8] font-times text-[16px] tracking-widest text-[#267A18] hover:bg-[#267A18] hover:text-white transition-colors">
+            MILK
+          </button>
+          <button className="px-8 py-2.5 border-2 border-[#267A18] bg-[#F5F4E8] font-times text-[16px] tracking-widest text-[#267A18] hover:bg-[#267A18] hover:text-white transition-colors">
+            COFFEE
+          </button>
+        </div>
+
+        {/* Product Grid */}
+        <div className="grid grid-cols-4 gap-5">
+          {products.map((product) => (
+            <div key={product.id} className="flex flex-col gap-2">
+              {/* Product Image Placeholder */}
+              <div className="aspect-square bg-[#D4D8C5] rounded-sm"></div>
+              {/* Product Name */}
+              <div className="bg-[#D8D7C4] py-3 text-center">
+                <p className="font-times text-[20px] tracking-wide text-[#267A18]">
+                  {product.name}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
