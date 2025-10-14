@@ -22,9 +22,9 @@ export const metadata: Metadata = {
   title: "Tamcha",
   description: "Tamcha - Premium Tea and Coffee",
   icons: {
-    icon: [{ url: "/Tamcha-Icon.svg", type: "image/svg+xml" }],
-    shortcut: "/Tamcha-Icon.svg",
-    apple: "/Tamcha-Icon.svg",
+    icon: [{ url: "/Tamcha.svg", type: "image/svg+xml" }],
+    shortcut: "/Tamcha.svg",
+    apple: "/Tamcha.svg",
   },
 };
 
