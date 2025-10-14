@@ -1,103 +1,170 @@
-import Image from "next/image";
+"use client";
+
+import { useState } from "react";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  return (
+    <div className="min-h-screen bg-[#E3E2C7]">
+      {/* Header with Logo and Navigation */}
+      <header className="px-4 sm:px-9 py-4 sm:py-8 flex items-center justify-between mb-8 sm:mb-12">
+        {/* Logo */}
+        <a href="/">
+          <h1
+            className="font-times text-[40px] sm:text-[64px] leading-none text-[#267A18] cursor-pointer hover:opacity-80 transition-opacity"
+            style={{ letterSpacing: "-0.04em" }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+            Tamcha
+          </h1>
+        </a>
+
+        {/* Desktop Navigation Bar with Icon */}
+        <div className="hidden lg:flex items-center gap-8">
+          <nav className="bg-[#D8D7C4] px-10 py-4 flex items-center gap-16">
+            <a
+              href="/menu"
+              className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity"
+            >
+              MENU
+            </a>
+            <a
+              href="/location"
+              className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity"
+            >
+              LOCATION
+            </a>
+            <a
+              href="/about"
+              className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity"
+            >
+              ABOUT US
+            </a>
+            <a
+              href="/membership"
+              className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity"
+            >
+              MEMBERSHIP
+            </a>
+          </nav>
+          <a
+            href="/"
+            className="w-16 h-16 flex items-center justify-center hover:opacity-70 transition-opacity"
+          >
+            <img
+              src="/Tamcha-Icon.svg"
+              alt="Tamcha Icon"
+              className="w-full h-full"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+
+        {/* Mobile Hamburger Menu */}
+        <button
+          className="lg:hidden flex flex-col gap-1.5 w-8 h-8 justify-center items-center"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+          <span
+            className={`w-6 h-0.5 bg-[#267A18] transition-all ${
+              isMenuOpen ? "rotate-45 translate-y-2" : ""
+            }`}
+          ></span>
+          <span
+            className={`w-6 h-0.5 bg-[#267A18] transition-all ${
+              isMenuOpen ? "opacity-0" : ""
+            }`}
+          ></span>
+          <span
+            className={`w-6 h-0.5 bg-[#267A18] transition-all ${
+              isMenuOpen ? "-rotate-45 -translate-y-2" : ""
+            }`}
+          ></span>
+        </button>
+      </header>
+
+      {/* Mobile Menu Dropdown */}
+      {isMenuOpen && (
+        <div className="lg:hidden bg-[#D8D7C4] mx-4 mb-8 rounded-sm overflow-hidden">
+          <nav className="flex flex-col">
+            <a
+              href="/menu"
+              className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4 border-b border-[#267A18]/20"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              MENU
+            </a>
+            <a
+              href="/location"
+              className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4 border-b border-[#267A18]/20"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              LOCATION
+            </a>
+            <a
+              href="/about"
+              className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4 border-b border-[#267A18]/20"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              ABOUT US
+            </a>
+            <a
+              href="/membership"
+              className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              MEMBERSHIP
+            </a>
+          </nav>
+          <div className="flex items-center justify-center py-4">
+            <a href="/">
+              <img
+                src="/Tamcha-Icon.svg"
+                alt="Tamcha Icon"
+                className="w-12 h-12"
+              />
+            </a>
+          </div>
+        </div>
+      )}
+
+      {/* Hero Section */}
+      <div className="px-4 sm:px-9 pb-16">
+        <div className="max-w-4xl mx-auto text-center py-20">
+          <h2
+            className="font-times text-[64px] sm:text-[96px] text-[#267A18] mb-8"
+            style={{ letterSpacing: "-0.04em" }}
+          >
+            Welcome to Tamcha
+          </h2>
+          <p className="font-times text-[24px] sm:text-[32px] text-[#267A18] mb-12">
+            Experience True Premium Matcha
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="/menu"
+              className="px-8 py-4 bg-[#267A18] font-times text-[18px] tracking-widest text-white hover:bg-[#1e5f13] transition-colors"
+            >
+              VIEW MENU
+            </a>
+            <a
+              href="/location"
+              className="px-8 py-4 border-2 border-[#267A18] bg-[#F5F4E8] font-times text-[18px] tracking-widest text-[#267A18] hover:bg-[#267A18] hover:text-white transition-colors"
+            >
+              FIND US
+            </a>
+          </div>
+        </div>
+
+        {/* Featured Icon */}
+        <div className="flex justify-center mt-16">
+          <img
+            src="/Tamcha-Icon.svg"
+            alt="Tamcha"
+            className="w-32 h-32 sm:w-48 sm:h-48 opacity-80"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </div>
+      </div>
     </div>
   );
 }
