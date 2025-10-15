@@ -10,54 +10,41 @@ export default function Home() {
       {/* Header with Logo and Navigation */}
       <header className="px-4 sm:px-9 py-4 sm:py-8 flex items-center justify-between mb-8 sm:mb-12">
         {/* Logo */}
-        <a href="/">
-          <h1
-            className="font-times text-[40px] sm:text-[64px] leading-none text-[#267A18] cursor-pointer hover:opacity-80 transition-opacity"
-            style={{ letterSpacing: "-0.04em" }}
-          >
-            Tamcha
-          </h1>
+        <a href="/" className="hover:opacity-80 transition-opacity">
+          <img
+            src="/Tamcha-Logo.svg"
+            alt="Tamcha"
+            className="h-[50px] sm:h-[70px] w-auto"
+          />
         </a>
 
-        {/* Desktop Navigation Bar with Icon */}
-        <div className="hidden lg:flex items-center gap-8">
-          <nav className="bg-[#D8D7C4] px-10 py-4 flex items-center gap-16">
-            <a
-              href="/menu"
-              className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity"
-            >
-              MENU
-            </a>
-            <a
-              href="/location"
-              className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity"
-            >
-              LOCATION
-            </a>
-            <a
-              href="/about"
-              className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity"
-            >
-              ABOUT US
-            </a>
-            <a
-              href="/membership"
-              className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity"
-            >
-              MEMBERSHIP
-            </a>
-          </nav>
+        {/* Desktop Navigation Bar */}
+        <nav className="hidden lg:flex bg-[#D8D7C4] px-10 py-4 items-center gap-16">
           <a
-            href="/"
-            className="w-16 h-16 flex items-center justify-center hover:opacity-70 transition-opacity"
+            href="/menu"
+            className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity"
           >
-            <img
-              src="/Tamcha-Icon.svg"
-              alt="Tamcha Icon"
-              className="w-full h-full"
-            />
+            MENU
           </a>
-        </div>
+          <a
+            href="/location"
+            className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity"
+          >
+            LOCATION
+          </a>
+          <a
+            href="/about"
+            className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity"
+          >
+            ABOUT US
+          </a>
+          <a
+            href="/membership"
+            className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity"
+          >
+            MEMBERSHIP
+          </a>
+        </nav>
 
         {/* Mobile Hamburger Menu */}
         <button
@@ -116,15 +103,6 @@ export default function Home() {
               MEMBERSHIP
             </a>
           </nav>
-          <div className="flex items-center justify-center py-4">
-            <a href="/">
-              <img
-                src="/Tamcha-Icon.svg"
-                alt="Tamcha Icon"
-                className="w-12 h-12"
-              />
-            </a>
-          </div>
         </div>
       )}
 
