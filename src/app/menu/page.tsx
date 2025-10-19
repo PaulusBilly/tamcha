@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function MenuPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,13 +23,16 @@ export default function MenuPage() {
       {/* Header with Logo and Navigation */}
       <header className="px-4 sm:px-9 py-4 sm:py-8 flex items-center justify-between mb-8 sm:mb-12">
         {/* Logo */}
-        <a href="/" className="hover:opacity-80 transition-opacity">
-          <img
+        <Link href="/" className="hover:opacity-80 transition-opacity">
+          <Image
             src="/Tamcha-Logo.svg"
             alt="Tamcha"
+            width={140}
+            height={70}
             className="h-[50px] sm:h-[70px] w-auto"
+            priority
           />
-        </a>
+        </Link>
 
         {/* Desktop Navigation Bar */}
         <nav className="hidden lg:flex bg-[#D8D7C4] px-10 py-4 items-center gap-16">
@@ -37,6 +42,12 @@ export default function MenuPage() {
           >
             MENU
           </a>
+           <a
+             href="/article"
+             className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity"
+           >
+             ARTICLE
+           </a>
           <a
             href="/location"
             className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity"
@@ -92,6 +103,13 @@ export default function MenuPage() {
             >
               MENU
             </a>
+             <a
+               href="/article"
+               className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4 border-b border-[#267A18]/20"
+               onClick={() => setIsMenuOpen(false)}
+             >
+               article
+             </a>
             <a
               href="/location"
               className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4 border-b border-[#267A18]/20"

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 export default function AboutPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,10 +12,13 @@ export default function AboutPage() {
       <header className="px-4 sm:px-9 py-4 sm:py-8 flex items-center justify-between mb-8 sm:mb-12">
         {/* Logo */}
         <a href="/" className="hover:opacity-80 transition-opacity">
-          <img
+          <Image
             src="/Tamcha-Logo.svg"
             alt="Tamcha"
+            width={140}
+            height={70}
             className="h-[50px] sm:h-[70px] w-auto"
+            priority
           />
         </a>
 

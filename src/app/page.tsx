@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,10 +12,13 @@ export default function Home() {
       <header className="px-4 sm:px-9 py-4 sm:py-8 flex items-center justify-between mb-8 sm:mb-12">
         {/* Logo */}
         <a href="/" className="hover:opacity-80 transition-opacity">
-          <img
+          <Image
             src="/Tamcha-Logo.svg"
             alt="Tamcha"
+            width={140}
+            height={70}
             className="h-[50px] sm:h-[70px] w-auto"
+            priority
           />
         </a>
 
@@ -26,6 +30,12 @@ export default function Home() {
           >
             MENU
           </a>
+           <a
+             href="/article"
+             className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity"
+           >
+             article
+           </a>
           <a
             href="/location"
             className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity"
@@ -81,6 +91,13 @@ export default function Home() {
             >
               MENU
             </a>
+             <a
+               href="/article"
+               className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4 border-b border-[#267A18]/20"
+               onClick={() => setIsMenuOpen(false)}
+             >
+               article
+             </a>
             <a
               href="/location"
               className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4 border-b border-[#267A18]/20"
@@ -136,9 +153,11 @@ export default function Home() {
 
         {/* Featured Icon */}
         <div className="flex justify-center mt-16">
-          <img
+          <Image
             src="/Tamcha-Icon.svg"
             alt="Tamcha"
+            width={192}
+            height={192}
             className="w-32 h-32 sm:w-48 sm:h-48 opacity-80"
           />
         </div>
