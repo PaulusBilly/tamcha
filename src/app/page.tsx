@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,7 +12,7 @@ export default function Home() {
       {/* Header with Logo and Navigation */}
       <header className="px-4 sm:px-9 py-4 sm:py-8 flex items-center justify-between mb-8 sm:mb-12">
         {/* Logo */}
-        <a href="/" className="hover:opacity-80 transition-opacity">
+        <Link href="/" className="hover:opacity-80 transition-opacity">
           <Image
             src="/Tamcha-Logo.svg"
             alt="Tamcha"
@@ -20,40 +21,15 @@ export default function Home() {
             className="h-[50px] sm:h-[70px] w-auto"
             priority
           />
-        </a>
+        </Link>
 
         {/* Desktop Navigation Bar */}
         <nav className="hidden lg:flex bg-[#D8D7C4] px-10 py-4 items-center gap-16">
-          <a
-            href="/menu"
-            className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity"
-          >
-            MENU
-          </a>
-           <a
-             href="/article"
-             className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity"
-           >
-             article
-           </a>
-          <a
-            href="/location"
-            className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity"
-          >
-            LOCATION
-          </a>
-          <a
-            href="/about"
-            className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity"
-          >
-            ABOUT US
-          </a>
-          <a
-            href="/membership"
-            className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity"
-          >
-            MEMBERSHIP
-          </a>
+          <Link href="/menu" className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity">MENU</Link>
+          <Link href="/artikel" className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity">ARTICLE</Link>
+          <Link href="/location" className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity">LOCATION</Link>
+          <Link href="/about" className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity">ABOUT US</Link>
+          <Link href="/membership" className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity">MEMBERSHIP</Link>
         </nav>
 
         {/* Mobile Hamburger Menu */}
@@ -84,41 +60,11 @@ export default function Home() {
       {isMenuOpen && (
         <div className="lg:hidden bg-[#D8D7C4] mx-4 mb-8 rounded-sm overflow-hidden">
           <nav className="flex flex-col">
-            <a
-              href="/menu"
-              className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4 border-b border-[#267A18]/20"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              MENU
-            </a>
-             <a
-               href="/article"
-               className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4 border-b border-[#267A18]/20"
-               onClick={() => setIsMenuOpen(false)}
-             >
-               article
-             </a>
-            <a
-              href="/location"
-              className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4 border-b border-[#267A18]/20"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              LOCATION
-            </a>
-            <a
-              href="/about"
-              className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4 border-b border-[#267A18]/20"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              ABOUT US
-            </a>
-            <a
-              href="/membership"
-              className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              MEMBERSHIP
-            </a>
+            <Link href="/menu" className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4 border-b border-[#267A18]/20" onClick={() => setIsMenuOpen(false)}>MENU</Link>
+            <Link href="/artikel" className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4 border-b border-[#267A18]/20" onClick={() => setIsMenuOpen(false)}>ARTICLE</Link>
+            <Link href="/location" className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4 border-b border-[#267A18]/20" onClick={() => setIsMenuOpen(false)}>LOCATION</Link>
+            <Link href="/about" className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4 border-b border-[#267A18]/20" onClick={() => setIsMenuOpen(false)}>ABOUT US</Link>
+            <Link href="/membership" className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4" onClick={() => setIsMenuOpen(false)}>MEMBERSHIP</Link>
           </nav>
         </div>
       )}
@@ -136,18 +82,8 @@ export default function Home() {
             Experience True Premium Matcha
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/menu"
-              className="px-8 py-4 bg-[#267A18] font-times text-[18px] tracking-widest text-white hover:bg-[#1e5f13] transition-colors"
-            >
-              VIEW MENU
-            </a>
-            <a
-              href="/location"
-              className="px-8 py-4 border-2 border-[#267A18] bg-[#F5F4E8] font-times text-[18px] tracking-widest text-[#267A18] hover:bg-[#267A18] hover:text-white transition-colors"
-            >
-              FIND US
-            </a>
+            <Link href="/menu" className="px-8 py-4 bg-[#267A18] font-times text-[18px] tracking-widest text-white hover:bg-[#1e5f13] transition-colors">VIEW MENU</Link>
+            <Link href="/location" className="px-8 py-4 border-2 border-[#267A18] bg-[#F5F4E8] font-times text-[18px] tracking-widest text-[#267A18] hover:bg-[#267A18] hover:text-white transition-colors">FIND US</Link>
           </div>
         </div>
 

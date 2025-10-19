@@ -36,36 +36,36 @@ export default function MenuPage() {
 
         {/* Desktop Navigation Bar */}
         <nav className="hidden lg:flex bg-[#D8D7C4] px-10 py-4 items-center gap-16">
-          <a
+          <Link
             href="/menu"
             className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity"
           >
             MENU
-          </a>
-           <a
-             href="/article"
-             className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity"
-           >
-             ARTICLE
-           </a>
-          <a
+          </Link>
+          <Link
+            href="/artikel"
+            className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity"
+          >
+            ARTICLE
+          </Link>
+          <Link
             href="/location"
             className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity"
           >
             LOCATION
-          </a>
-          <a
+          </Link>
+          <Link
             href="/about"
             className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity"
           >
             ABOUT US
-          </a>
-          <a
+          </Link>
+          <Link
             href="/membership"
             className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity"
           >
             MEMBERSHIP
-          </a>
+          </Link>
         </nav>
 
         {/* Mobile Hamburger Menu */}
@@ -96,41 +96,41 @@ export default function MenuPage() {
       {isMenuOpen && (
         <div className="lg:hidden bg-[#D8D7C4] mx-4 mb-8 rounded-sm overflow-hidden">
           <nav className="flex flex-col">
-            <a
+            <Link
               href="/menu"
               className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4 border-b border-[#267A18]/20"
               onClick={() => setIsMenuOpen(false)}
             >
               MENU
-            </a>
-             <a
-               href="/article"
-               className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4 border-b border-[#267A18]/20"
-               onClick={() => setIsMenuOpen(false)}
-             >
-               article
-             </a>
-            <a
+            </Link>
+            <Link
+              href="/artikel"
+              className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4 border-b border-[#267A18]/20"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              ARTICLE
+            </Link>
+            <Link
               href="/location"
               className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4 border-b border-[#267A18]/20"
               onClick={() => setIsMenuOpen(false)}
             >
               LOCATION
-            </a>
-            <a
+            </Link>
+            <Link
               href="/about"
               className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4 border-b border-[#267A18]/20"
               onClick={() => setIsMenuOpen(false)}
             >
               ABOUT US
-            </a>
-            <a
+            </Link>
+            <Link
               href="/membership"
               className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4"
               onClick={() => setIsMenuOpen(false)}
             >
               MEMBERSHIP
-            </a>
+            </Link>
           </nav>
         </div>
       )}

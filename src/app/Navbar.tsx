@@ -24,7 +24,7 @@ export default function Navbar() {
         {/* Desktop Navigation Bar */}
         <nav className="hidden lg:flex bg-[#D8D7C4] px-10 py-4 items-center gap-16">
           <Link href="/menu" className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity">MENU</Link>
-          <Link href="/article" className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity">article</Link>
+          <Link href="/artikel" className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity">ARTICLE</Link>
           <Link href="/location" className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity">LOCATION</Link>
           <Link href="/about" className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity">ABOUT US</Link>
           <Link href="/membership" className="font-times text-[20px] tracking-wide text-[#267A18] hover:opacity-70 transition-opacity">MEMBERSHIP</Link>
@@ -47,7 +47,7 @@ export default function Navbar() {
         <div className="lg:hidden bg-[#D8D7C4] mx-4 mb-8 rounded-sm overflow-hidden">
           <nav className="flex flex-col">
             <Link href="/menu" className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4 border-b border-[#267A18]/20" onClick={() => setIsMenuOpen(false)}>MENU</Link>
-            <Link href="/article" className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4 border-b border-[#267A18]/20" onClick={() => setIsMenuOpen(false)}>article</Link>
+            <Link href="/artikel" className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4 border-b border-[#267A18]/20" onClick={() => setIsMenuOpen(false)}>ARTICLE</Link>
             <Link href="/location" className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4 border-b border-[#267A18]/20" onClick={() => setIsMenuOpen(false)}>LOCATION</Link>
             <Link href="/about" className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4 border-b border-[#267A18]/20" onClick={() => setIsMenuOpen(false)}>ABOUT US</Link>
             <Link href="/membership" className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4" onClick={() => setIsMenuOpen(false)}>MEMBERSHIP</Link>

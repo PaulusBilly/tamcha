@@ -20,7 +20,7 @@ export default function articlePage() {
 				{/* Article List */}
 				<div className="flex flex-col gap-8">
 					{articles.map((article) => (
-						<Link href={`/article/${article.id}`} key={article.id} className="flex flex-col sm:flex-row gap-6 items-start group">
+						<Link href={`/artikel/${article.id}`} key={article.id} className="flex flex-col sm:flex-row gap-6 items-start group">
 							<div className="flex-1">
 								<span className="inline-block bg-[#F5F4E8] text-[#267A18] text-xs font-medium px-3 py-1 rounded-full font-times mb-2">{article.tag}</span>
 								<h2 className="font-times text-[22px] sm:text-[24px] text-[#171717] font-normal mb-2 group-hover:underline">{article.title}</h2>

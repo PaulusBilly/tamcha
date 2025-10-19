@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function MembershipPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,7 +12,7 @@ export default function MembershipPage() {
       {/* Header with Logo and Navigation */}
       <header className="px-4 sm:px-9 py-4 sm:py-8 flex items-center justify-between mb-8 sm:mb-12">
         {/* Logo */}
-        <a href="/" className="hover:opacity-80 transition-opacity">
+        <Link href="/" className="hover:opacity-80 transition-opacity">
           <Image
             src="/Tamcha-Logo.svg"
             alt="Tamcha"
@@ -20,7 +21,7 @@ export default function MembershipPage() {
             className="h-[50px] sm:h-[70px] w-auto"
             priority
           />
-        </a>
+        </Link>
 
         {/* Desktop Navigation Bar */}
         <nav className="hidden lg:flex bg-[#D8D7C4] px-10 py-4 items-center gap-16">
@@ -78,34 +79,10 @@ export default function MembershipPage() {
       {isMenuOpen && (
         <div className="lg:hidden bg-[#D8D7C4] mx-4 mb-8 rounded-sm overflow-hidden">
           <nav className="flex flex-col">
-            <a
-              href="/menu"
-              className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4 border-b border-[#267A18]/20"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              MENU
-            </a>
-            <a
-              href="/location"
-              className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4 border-b border-[#267A18]/20"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              LOCATION
-            </a>
-            <a
-              href="/about"
-              className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4 border-b border-[#267A18]/20"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              ABOUT US
-            </a>
-            <a
-              href="/membership"
-              className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              MEMBERSHIP
-            </a>
+            <Link href="/menu" className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4 border-b border-[#267A18]/20" onClick={() => setIsMenuOpen(false)}>MENU</Link>
+            <Link href="/location" className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4 border-b border-[#267A18]/20" onClick={() => setIsMenuOpen(false)}>LOCATION</Link>
+            <Link href="/about" className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4 border-b border-[#267A18]/20" onClick={() => setIsMenuOpen(false)}>ABOUT US</Link>
+            <Link href="/membership" className="font-times text-[18px] tracking-wide text-[#267A18] hover:bg-[#CDD1B8] transition-colors px-6 py-4" onClick={() => setIsMenuOpen(false)}>MEMBERSHIP</Link>
           </nav>
         </div>
       )}
