@@ -30,10 +30,11 @@ export default function articleDetail({ params }: { params: { id: string } }) {
       : article.id === 5
       ? "From matcha pancakes to matcha smoothies, discover delicious and creative ways to enjoy matcha beyond the traditional cup."
       : "";
+  // Use tag and time from article data
   const meta = {
-    comments: 2,
-    time: "10 min",
-    tags: ["Ramadan", "Spiritual", "Meditation"],
+    time: article.time,
+    tag: article.tag,
+    tags: article.tags,
   };
 
   // Example content for each article
@@ -101,12 +102,12 @@ export default function articleDetail({ params }: { params: { id: string } }) {
         </div>
         {/* Meta */}
         <div className="flex items-center gap-6 text-[#525252] text-[14px] mb-2">
-          <span className="flex items-center gap-1"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M7 10h10M7 14h6M5 6h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="#525252" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg> {meta.comments} </span>
+          <span className="flex items-center gap-1 bg-[#F5F4E8] text-[#267A18] text-xs font-medium px-3 py-1 rounded-full font-times uppercase tracking-wide">{meta.tag}</span>
           <span className="flex items-center gap-1"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M12 8v4l3 2" stroke="#525252" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/><circle cx="12" cy="12" r="10" stroke="#525252" strokeWidth="1.5"/></svg> {meta.time}</span>
         </div>
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-4">
-          {meta.tags.map((tag) => (
+          {meta.tags && meta.tags.map((tag) => (
             <span key={tag} className="inline-block bg-[#F5F4E8] text-[#525252] text-xs font-medium px-3 py-1 rounded-full font-times uppercase tracking-wide">{tag}</span>
           ))}
         </div>
