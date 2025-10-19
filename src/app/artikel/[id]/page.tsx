@@ -5,9 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
+import React from "react";
 
-export default function articleDetail({ params }: { params: { id: string } }) {
-  const article = articles.find((a) => a.id === Number(params.id));
+export default function ArticleDetail({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = React.use(params);
+  const article = articles.find((a) => a.id === Number(id));
   if (!article) return <div className="text-center py-20">Article not found.</div>;
 
   // Example meta and author data
