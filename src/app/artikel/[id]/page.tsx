@@ -1,6 +1,10 @@
+'use client';
+
 import { articles } from "../data";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
 
 export default function articleDetail({ params }: { params: { id: string } }) {
   const article = articles.find((a) => a.id === Number(params.id));
@@ -8,10 +12,10 @@ export default function articleDetail({ params }: { params: { id: string } }) {
 
   // Example meta and author data
   const author = {
-    name: "Erin Smith",
+    name: "Ricky Smith",
     role: "COPY WRITER",
-    date: "June 2nd 2019",
-    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+    date: "Sept 22, 2025",
+    avatar: "https://randomuser.me/api/portraits/men/4.jpg",
   };
   // Subtitle for matcha articles
   const subtitle =
@@ -73,7 +77,12 @@ export default function articleDetail({ params }: { params: { id: string } }) {
   const content = contentMap[article.id] || { paragraphs: [] };
 
   return (
-  <div className="min-h-screen bg-[#E3E2C7] pb-20">
+    <motion.div
+      className="min-h-screen bg-[#E3E2C7] pb-20"
+      initial={{ opacity: 0, y: 32 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+    >
       <div className="max-w-4xl mx-auto pt-12 px-4 sm:px-0">
         {/* Back Button */}
         <div className="mb-6">
@@ -127,9 +136,9 @@ export default function articleDetail({ params }: { params: { id: string } }) {
             <div className="mb-6">
               <div className="text-xs text-[#A3A3A3] mb-2">SHARE THIS ARTICLE</div>
               <div className="flex gap-3">
-                <Link href="#" aria-label="Share on Facebook"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M17 2.1A2.1 2.1 0 0 1 19.1 4.2v15.6a2.1 2.1 0 0 1-2.1 2.1H6.9A2.1 2.1 0 0 1 4.8 19.8V4.2A2.1 2.1 0 0 1 6.9 2.1h10.2Z" stroke="#525252" strokeWidth="1.5"/><path d="M12 8v8m0 0h2.5m-2.5 0H9.5" stroke="#525252" strokeWidth="1.5" strokeLinecap="round"/></svg></Link>
-                <Link href="#" aria-label="Share on Instagram"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><rect x="2.1" y="2.1" width="19.8" height="19.8" rx="4.9" stroke="#525252" strokeWidth="1.5"/><circle cx="12" cy="12" r="5.5" stroke="#525252" strokeWidth="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="#525252"/></svg></Link>
-                <Link href="#" aria-label="Share on Twitter"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M22 5.924c-.793.352-1.645.59-2.54.697a4.48 4.48 0 0 0 1.964-2.475 8.94 8.94 0 0 1-2.828 1.082A4.48 4.48 0 0 0 12 9.482c0 .352.04.695.116 1.022A12.72 12.72 0 0 1 3.11 4.868a4.48 4.48 0 0 0 1.39 5.976A4.44 4.44 0 0 1 2.8 9.8v.057a4.48 4.48 0 0 0 3.594 4.393 4.48 4.48 0 0 1-2.02.077 4.48 4.48 0 0 0 4.18 3.11A8.98 8.98 0 0 1 2 19.07a12.68 12.68 0 0 0 6.88 2.017c8.26 0 12.78-6.84 12.78-12.78 0-.195-.004-.39-.013-.583A9.14 9.14 0 0 0 24 4.59a8.98 8.98 0 0 1-2.6.713Z" stroke="#525252" strokeWidth="1.5"/></svg></Link>
+                <Link href="#" aria-label="Share on Facebook" className="text-[#4267B2] hover:text-[#23345a] transition-colors text-lg"><FaFacebookF /></Link>
+                <Link href="https://www.instagram.com/tamcha.id" aria-label="Share on Instagram" className="text-[#E1306C] hover:text-[#a81e4d] transition-colors text-lg"><FaInstagram /></Link>
+                <Link href="#" aria-label="Share on X / Twitter" className="text-[#171717] hover:text-[#525252] transition-colors text-lg"><FaXTwitter /></Link>
               </div>
             </div>
             <div className="mt-8">
@@ -140,6 +149,6 @@ export default function articleDetail({ params }: { params: { id: string } }) {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
